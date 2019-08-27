@@ -4,7 +4,7 @@ jobs:
     filters:
       branches:
         ignore:
-          - gh-pages
+          - /^gh-pages*/
     docker:
       - image: circleci/node
     steps:
@@ -54,4 +54,4 @@ workflows:
           filters:
             branches:
               ignore:
-                - gh-pages
+                - /^gh-pages*/
