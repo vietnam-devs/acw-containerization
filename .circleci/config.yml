@@ -1,6 +1,10 @@
 version: 2
 jobs:
   push-gh-pages:
+    filters:
+      branches:
+        ignore:
+          - gh-pages
     docker:
       - image: circleci/node
     steps:
