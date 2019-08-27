@@ -3,9 +3,6 @@ jobs:
   push-gh-pages:
     docker:
       - image: circleci/node
-    environment:
-      - SOURCE_BRANCH: master
-      - TARGET_BRANCH: gh-pages
     steps:
       - checkout
       - restore_cache:
@@ -30,20 +27,24 @@ jobs:
       - run:
           name: Publish
           command: |
-            if [[ $GITHUB_TOKEN && $CIRCLE_BRANCH == $SOURCE_BRANCH ]]; then
-              REPOSITORY="https://thangchung:${GITHUB_TOKEN}@github.com/vietnam-devs/acw-containerization.git"
-              git config user.email thangchung@users.noreply.github.com
-              git config user.name thangchung
-              git remote set-url origin ${REPOSITORY}
-              rm -rf docs/.vuepress/dist
-              git checkout gh-pages
-              rm -rf assets
-              rsync -avzh $HOME/site/ .
-              git add .
-              git commit -m "Publish docs"
-              git push origin gh-pages
+            if [[ $GITHUB_TOKEN ]]; then
+              if [[ "$CIRCLE_BRANCH" == "master" ]]
+                REPOSITORY="https://thangchung:${GITHUB_TOKEN}@github.com/vietnam-devs/acw-containerization.git"
+                git config user.email thangchung@users.noreply.github.com
+                git config user.name thangchung
+                git remote set-url origin ${REPOSITORY}
+                rm -rf docs/.vuepress/dist
+                git checkout gh-pages
+                rm -rf assets
+                rsync -avzh $HOME/site/ .
+                git add .
+                git commit -m "Publish docs"
+                git push origin gh-pages
+              else
+                echo "$CIRCLE_BRANCH branch, ignoring it..."
+              fi
             else
-              echo "No GitHub token found! Skip publishing"
+                echo "No GitHub token found! Skip publishing"
             fi
 workflows:
   version: 2
