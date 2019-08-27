@@ -47,6 +47,6 @@ workflows:
   gh-pages:
     jobs:
       - push-gh-pages:
-          filters:
-            branches:
-              only: master
+          branches:
+            ignore:
+              - gh-pages
