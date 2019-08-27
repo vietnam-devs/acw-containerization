@@ -1,4 +1,4 @@
-version: 2.1
+version: 2
 jobs:
   push-gh-pages:
     docker:
@@ -47,6 +47,7 @@ workflows:
   gh-pages:
     jobs:
       - push-gh-pages:
-          branches:
-            ignore:
-              - gh-pages
+          filters:
+            branches:
+              ignore:
+                - gh-pages
