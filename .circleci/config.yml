@@ -1,4 +1,4 @@
-version: 2
+version: 2.1
 jobs:
   push-gh-pages:
     docker:
@@ -28,21 +28,17 @@ jobs:
           name: Publish
           command: |
             if [[ $GITHUB_TOKEN ]]; then
-              if [[ "$CIRCLE_BRANCH" == "master" ]]; then
-                REPOSITORY="https://thangchung:${GITHUB_TOKEN}@github.com/vietnam-devs/acw-containerization.git"
-                git config user.email thangchung@users.noreply.github.com
-                git config user.name thangchung
-                git remote set-url origin ${REPOSITORY}
-                rm -rf docs/.vuepress/dist
-                git checkout gh-pages
-                rm -rf assets
-                rsync -avzh $HOME/site/ .
-                git add .
-                git commit -m "Publish docs"
-                git push origin gh-pages
-              else
-                echo "$CIRCLE_BRANCH branch, ignoring it..."
-              fi
+              REPOSITORY="https://thangchung:${GITHUB_TOKEN}@github.com/vietnam-devs/acw-containerization.git"
+              git config user.email thangchung@users.noreply.github.com
+              git config user.name thangchung
+              git remote set-url origin ${REPOSITORY}
+              rm -rf docs/.vuepress/dist
+              git checkout gh-pages
+              rm -rf assets
+              rsync -avzh $HOME/site/ .
+              git add .
+              git commit -m "Publish docs"
+              git push origin gh-pages
             else
               echo "No GitHub token found! Skip publishing"
             fi
@@ -50,7 +46,4 @@ workflows:
   version: 2
   gh-pages:
     jobs:
-      - push-gh-pages:
-          filters:
-            branches:
-              only: master
+      - push-gh-pages
