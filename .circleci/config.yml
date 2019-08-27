@@ -44,7 +44,7 @@ jobs:
                 echo "$CIRCLE_BRANCH branch, ignoring it..."
               fi
             else
-                echo "No GitHub token found! Skip publishing"
+              echo "No GitHub token found! Skip publishing"
             fi
 workflows:
   version: 2
