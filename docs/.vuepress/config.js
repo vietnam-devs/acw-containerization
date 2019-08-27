@@ -1,4 +1,5 @@
 module.exports = {
+  base: '/acw-containerization/',
   title: 'Docker & AKS workshop',
   description: 'Docker & AKS workshop',
   themeConfig: {
