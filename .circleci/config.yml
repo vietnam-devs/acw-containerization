@@ -3,9 +3,6 @@ jobs:
   push-gh-pages:
     docker:
       - image: circleci/node
-    branches:
-      ignore:
-        - gh-pages
     steps:
       - checkout
       - restore_cache:
@@ -49,4 +46,7 @@ workflows:
   version: 2
   gh-pages:
     jobs:
-      - push-gh-pages
+      - push-gh-pages:
+          filters:
+            branches:
+              only: master
