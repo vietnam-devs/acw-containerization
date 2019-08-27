@@ -1,5 +1,5 @@
 ---
-title: Deploy the solution to Azure Kubernetes Service
+title: Deploy the solution to AKS
 ---
 
 # Module 2: Deploy the solution to Azure Kubernetes Service
