@@ -1,8 +1,14 @@
 version: 2
 jobs:
   push-gh-pages:
+    branches:
+      ignore:
+        - gh-pages
     docker:
       - image: circleci/node
+    environment:
+      - SOURCE_BRANCH: master
+      - TARGET_BRANCH: gh-pages
     steps:
       - checkout
       - restore_cache:
@@ -27,7 +33,7 @@ jobs:
       - run:
           name: Publish
           command: |
-            if [[ $GITHUB_TOKEN && $CIRCLE_BRANCH == master ]]; then
+            if [[ $GITHUB_TOKEN && $CIRCLE_BRANCH == $SOURCE_BRANCH ]]; then
               REPOSITORY="https://thangchung:${GITHUB_TOKEN}@github.com/vietnam-devs/acw-containerization.git"
               git config user.email thangchung@users.noreply.github.com
               git config user.name thangchung
