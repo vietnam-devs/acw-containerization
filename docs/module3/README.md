@@ -1,8 +1,18 @@
 ---
-title: Scale the application and test HA
+title: Create and run a Docker application
 ---
 
-# Module 3: Scale the application and test HA
-- Increase service instances from the Kubernetes dashboard
-- Increase service instances beyond available resources
-- Restart containers and test HA
+# Module 3: Create and run a Docker application
+- Run and Test the application
+
+```bash
+$ docker ps
+```
+
+- Enable browsing to the web application
+- Create a Dockerfile
+- Create Docker images
+- Run a containerized application
+- Setup environment variables
+- Setup Nexus Sonatype on docker container (or create Azure Container Registry)
+- Push images to  Azure Container Registry
