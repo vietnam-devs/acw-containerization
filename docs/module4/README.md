@@ -1,9 +1,10 @@
 ---
-title: Setup load balancing and service discovery
+title: Deploy the solution to AKS
 ---
 
-# Module 4: Setup load balancing and service discovery
-- Scale a service without port constraints
-- Update an external service to support dynamic discovery with a load balancer
-- Adjust CPU constraints to improve scale
-- Perform a rolling update
+# Module 4: Deploy the solution to Azure Kubernetes Service
+- Tunnel into the Azure Kubernetes Service cluster
+- Deploy a service using the Kubernetes management dashboard
+- Deploy a service using kubectl
+- Initialize database with a Kubernetes Job
+- Test the application in a browser
