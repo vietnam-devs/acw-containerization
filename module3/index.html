@@ -7,7 +7,7 @@
     <meta name="description" content="Docker &amp; AKS workshop">
     <link rel="icon" href="/acw-containerization/favicon.png">
     
-    <link rel="preload" href="/acw-containerization/assets/css/0.styles.ae323523.css" as="style"><link rel="preload" href="/acw-containerization/assets/js/app.de4b0b6d.js" as="script"><link rel="preload" href="/acw-containerization/assets/js/2.dec8aa0e.js" as="script"><link rel="preload" href="/acw-containerization/assets/js/8.77e75980.js" as="script"><link rel="prefetch" href="/acw-containerization/assets/js/10.5ecd2810.js"><link rel="prefetch" href="/acw-containerization/assets/js/11.066ff142.js"><link rel="prefetch" href="/acw-containerization/assets/js/12.dc0478b7.js"><link rel="prefetch" href="/acw-containerization/assets/js/3.8d8e2f29.js"><link rel="prefetch" href="/acw-containerization/assets/js/4.7d932259.js"><link rel="prefetch" href="/acw-containerization/assets/js/5.6f0e6c56.js"><link rel="prefetch" href="/acw-containerization/assets/js/6.f118834a.js"><link rel="prefetch" href="/acw-containerization/assets/js/7.83b45746.js"><link rel="prefetch" href="/acw-containerization/assets/js/9.b653e62b.js">
+    <link rel="preload" href="/acw-containerization/assets/css/0.styles.ae323523.css" as="style"><link rel="preload" href="/acw-containerization/assets/js/app.4272d21c.js" as="script"><link rel="preload" href="/acw-containerization/assets/js/2.dec8aa0e.js" as="script"><link rel="preload" href="/acw-containerization/assets/js/8.2e66acbd.js" as="script"><link rel="prefetch" href="/acw-containerization/assets/js/10.ac71cf06.js"><link rel="prefetch" href="/acw-containerization/assets/js/11.066ff142.js"><link rel="prefetch" href="/acw-containerization/assets/js/12.dc0478b7.js"><link rel="prefetch" href="/acw-containerization/assets/js/3.8d8e2f29.js"><link rel="prefetch" href="/acw-containerization/assets/js/4.7d932259.js"><link rel="prefetch" href="/acw-containerization/assets/js/5.6f0e6c56.js"><link rel="prefetch" href="/acw-containerization/assets/js/6.1cc1bb35.js"><link rel="prefetch" href="/acw-containerization/assets/js/7.b099a5e0.js"><link rel="prefetch" href="/acw-containerization/assets/js/9.0491b6d9.js">
     <link rel="stylesheet" href="/acw-containerization/assets/css/0.styles.ae323523.css">
   </head>
   <body>
@@ -15,16 +15,110 @@
     GitHub
     <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/acw-containerization/" class="nav-link">Home</a></div> <a href="https://github.com/vietnam-devs/acw-containerization" target="_blank" rel="noopener noreferrer" class="repo-link">
     GitHub
-    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><a href="/acw-containerization/" class="sidebar-link">Azure cloud workshop introduction</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/acw-containerization/#agenda" class="sidebar-link">Agenda</a></li><li class="sidebar-sub-header"><a href="/acw-containerization/#source-code" class="sidebar-link">Source Code</a></li><li class="sidebar-sub-header"><a href="/acw-containerization/#target-audience" class="sidebar-link">Target Audience</a></li></ul></li><li><a href="/acw-containerization/module1/" class="sidebar-link">Set up your Docker environment</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/acw-containerization/module2/" class="sidebar-link">Hello world</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/acw-containerization/module3/" class="active sidebar-link">Create and run a Docker application</a></li><li><a href="/acw-containerization/module4/" class="sidebar-link">Deploy the solution to AKS</a></li><li><a href="/acw-containerization/module5/" class="sidebar-link">Scale the application and test HA</a></li><li><a href="/acw-containerization/module6/" class="sidebar-link">Setup load balancing and service discovery</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="module-3-create-and-run-a-docker-application"><a href="#module-3-create-and-run-a-docker-application" aria-hidden="true" class="header-anchor">#</a> Module 3: Create and run a Docker application</h1> <ul><li>Run and Test the application</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code>$ docker <span class="token function">ps</span>
-</code></pre></div><ul><li>Enable browsing to the web application</li> <li>Create a Dockerfile</li> <li>Create Docker images</li> <li>Run a containerized application</li> <li>Setup environment variables</li> <li>Setup Nexus Sonatype on docker container (or create Azure Container Registry)</li> <li>Push images to  Azure Container Registry</li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><a href="/acw-containerization/" class="sidebar-link">Azure cloud workshop introduction</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/acw-containerization/#agenda" class="sidebar-link">Agenda</a></li><li class="sidebar-sub-header"><a href="/acw-containerization/#source-code" class="sidebar-link">Source Code</a></li><li class="sidebar-sub-header"><a href="/acw-containerization/#target-audience" class="sidebar-link">Target Audience</a></li></ul></li><li><a href="/acw-containerization/module1/" class="sidebar-link">Set up your Docker environment</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/acw-containerization/module2/" class="sidebar-link">Hello world</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/acw-containerization/module3/" class="active sidebar-link">Create and run a Docker application</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/acw-containerization/module4/" class="sidebar-link">Multi container environment</a></li><li><a href="/acw-containerization/module5/" class="sidebar-link">Scale the application and test HA</a></li><li><a href="/acw-containerization/module6/" class="sidebar-link">Setup load balancing and service discovery</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="module-3-create-and-run-a-docker-application"><a href="#module-3-create-and-run-a-docker-application" aria-hidden="true" class="header-anchor">#</a> Module 3: Create and run a Docker application</h1> <h3 id="static-site"><a href="#static-site" aria-hidden="true" class="header-anchor">#</a> Static site</h3> <p>Firstly, we will start step by step to deploy one static web site with nginx.</p> <div class="language-bash extra-class"><pre class="language-bash"><code> <span class="token function">mkdir</span> simple-site
+
+ <span class="token function">cat</span> <span class="token operator">&gt;</span> simple-site/index.html <span class="token operator">&lt;&lt;</span><span class="token string">'EOF'
+  &lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Docker workshop&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello Docker workshop - my static site.&lt;/h1&gt;
+  &lt;/body&gt;
+EOF</span>
+</code></pre></div><p>Next step, we download nginX image and run container directly by <code>docker run</code>, the <code>--rm</code> flag automatically removes the container when it exits.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>docker run --name static-site -v /home/workshop/simple-site:/usr/share/nginx/html:ro --rm nginx
+</code></pre></div><p>The <code>-v</code> flag is used to mount volume from host to container. Awesome, our website is up and running, but how can we see it?</p> <div class="language-bash extra-class"><pre class="language-bash"><code>docker <span class="token builtin class-name">exec</span> -it static-site <span class="token function">bash</span>
+<span class="token punctuation">..</span><span class="token punctuation">..</span>
+<span class="token function">curl</span> http://localhost
+</code></pre></div><p>Currently, Docker is not exposing any port to host. We re-run <code>docker run</code> with <code>-p</code> to publish port.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>docker run --name static-site -v /home/workshop/simple-site:/usr/share/nginx/html:ro -p <span class="token number">32769</span>:80 -d nginx
+</code></pre></div><p>In the above command, <code>-p</code> flag is used to publish port from container to host, syntax [host port]:[container port]</p> <p>In the browser http://workshop-vm-[x].eastasia.cloudapp.azure.com:32769/</p> <h3 id="our-first-image"><a href="#our-first-image" aria-hidden="true" class="header-anchor">#</a> Our first image</h3> <p>It is time to build and own Docker images. In this section, we will create one Docker image for &quot;Contact service&quot;, based on .Net Core 3.0 previce 8. Besides, it also guides you how to deploy Postgres by container and connect them together.</p> <p>Fristly, please clone the repository locally.</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> clone https://github.com/tungphuong/crm.git
+<span class="token builtin class-name">cd</span> crm/
+</code></pre></div><h3 id="dockerfile"><a href="#dockerfile" aria-hidden="true" class="header-anchor">#</a> Dockerfile</h3> <p>In &quot;Contact&quot; service directory has a Dockerfile. It starts by <code>FROM</code> keyword</p> <div class="language-bash extra-class"><pre class="language-bash"><code>FROM mcr.microsoft.com/dotnet/core/sdk:3.0.100-preview8-bionic AS builder
+</code></pre></div><p>Configuring the working directory in container</p> <div class="language-Dockerfile extra-class"><pre class="language-text"><code>WORKDIR /src
+</code></pre></div><p>The next steps is to write commands of:</p> <ul><li>Coping file, folder installing the dependencies...</li></ul> <div class="language- extra-class"><pre class="language-text"><code>COPY [&quot;src/BuildingBlocks/CRM.Shared/*.csproj&quot;, &quot;src/BuildingBlocks/CRM.Shared/&quot;]
+COPY [&quot;src/BuildingBlocks/CRM.Migration/*.csproj&quot;, &quot;src/BuildingBlocks/CRM.Migration/&quot;]
+...
+</code></pre></div><ul><li>Restoring packages</li></ul> <div class="language- extra-class"><pre class="language-text"><code>RUN dotnet restore src/Contact/CRM.Contact.Api/ /property:Configuration=Release ${feed} -nowarn:msb3202,nu1503
+</code></pre></div><ul><li>Building project</li></ul> <div class="language- extra-class"><pre class="language-text"><code>RUN dotnet publish src/Contact/CRM.Contact.Api/ -c Release -o /app --no-restore
+</code></pre></div><p>The next thing is to set environment variables</p> <div class="language- extra-class"><pre class="language-text"><code>ENV ASPNETCORE_URLS http://*:80
+ENV ASPNETCORE_ENVIRONMENT docker
+</code></pre></div><p>Last one is to specify the port number and the command for running the service</p> <div class="language- extra-class"><pre class="language-text"><code>EXPOSE 80
+ENTRYPOINT [ &quot;dotnet&quot;,  &quot;CRM.Contact.Api.dll&quot;]
+</code></pre></div><p>Our Dockerfile is ready and looks like</p> <div class="language- extra-class"><pre class="language-text"><code>FROM mcr.microsoft.com/dotnet/core/sdk:3.0.100-preview8-bionic AS builder
+
+ARG feed='--source &quot;https://api.nuget.org/v3/index.json&quot;'
+
+WORKDIR /src
+COPY [&quot;src/BuildingBlocks/CRM.Shared/*.csproj&quot;, &quot;src/BuildingBlocks/CRM.Shared/&quot;]
+COPY [&quot;src/BuildingBlocks/CRM.Migration/*.csproj&quot;, &quot;src/BuildingBlocks/CRM.Migration/&quot;]
+COPY [&quot;src/Contact/CRM.Contact.Contract/*.csproj&quot;, &quot;src/Contact/CRM.Contact.Contract/&quot;]
+COPY [&quot;src/Contact/CRM.Contact.Api/*.csproj&quot;, &quot;src/Contact/CRM.Contact.Api/&quot;]
+
+RUN dotnet restore src/Contact/CRM.Contact.Api/ /property:Configuration=Release ${feed} -nowarn:msb3202,nu1503
+RUN dotnet restore src/BuildingBlocks/CRM.Migration/ /property:Configuration=Release ${feed} -nowarn:msb3202,nu1503
+
+COPY [&quot;src/BuildingBlocks/CRM.Shared/.&quot;, &quot;src/BuildingBlocks/CRM.Shared/&quot;]
+COPY [&quot;src/BuildingBlocks/CRM.Migration/.&quot;, &quot;src/BuildingBlocks/CRM.Migration/&quot;]
+COPY [&quot;src/Contact/CRM.Contact.Contract/.&quot;, &quot;src/Contact/CRM.Contact.Contract/&quot;]
+COPY [&quot;src/Contact/CRM.Contact.Api/.&quot;, &quot;src/Contact/CRM.Contact.Api/&quot;]
+RUN dotnet publish src/Contact/CRM.Contact.Api/ -c Release -o /app --no-restore
+
+FROM builder AS migration
+WORKDIR /src/src/BuildingBlocks/CRM.Migration/
+
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.0.0-preview8-bionic
+WORKDIR /app
+
+ENV ASPNETCORE_URLS http://*:80
+ENV ASPNETCORE_ENVIRONMENT docker
+
+COPY --from=builder /app .
+
+EXPOSE 80
+ENTRYPOINT [ &quot;dotnet&quot;,  &quot;CRM.Contact.Api.dll&quot;]
+</code></pre></div><h3 id="build-image-from-dockerfile"><a href="#build-image-from-dockerfile" aria-hidden="true" class="header-anchor">#</a> Build image from Dockerfile</h3> <div class="language- extra-class"><pre class="language-text"><code>docker build -t crmnow/contact-api -f src/Contact/CRM.Contact.Api/Dockerfile .
+
+Sending build context to Docker daemon  2.223MB
+Step 1/23 : FROM mcr.microsoft.com/dotnet/core/sdk:3.0.100-preview8-bionic AS builder
+ ---&gt; 152368392bc4
+Step 2/23 : ARG feed='--source &quot;https://api.nuget.org/v3/index.json&quot;'
+ ---&gt; Using cache
+ ---&gt; 0751506e9318
+Step 3/23 : WORKDIR /src
+ ---&gt; Using cache
+ ---&gt; 9414cf4a0d7f
+Step 4/23 : COPY [&quot;src/BuildingBlocks/CRM.Shared/*.csproj&quot;, &quot;src/BuildingBlocks/CRM.Shared/&quot;]
+ ---&gt; e8c842891507
+Step 5/23 : COPY [&quot;src/BuildingBlocks/CRM.Migration/*.csproj&quot;, &quot;src/BuildingBlocks/CRM.Migration/&quot;]
+ ---&gt; abf5ef0a4fc6
+Step 6/23 : COPY [&quot;src/Contact/CRM.Contact.Contract/*.csproj&quot;, &quot;src/Contact/CRM.Contact.Contract/&quot;]
+ ---&gt; 2266cf6ea797
+Step 7/23 : COPY [&quot;src/Contact/CRM.Contact.Api/*.csproj&quot;, &quot;src/Contact/CRM.Contact.Api/&quot;]
+ ---&gt; 17077cbc16de
+Step 8/23 : RUN dotnet restore src/Contact/CRM.Contact.Api/ /property:Configuration=Release ${feed} -nowarn:msb3202,nu1503
+ ---&gt; Running in 9c30eb05086a
+ ....
+ Step 23/23 : ENTRYPOINT [ &quot;dotnet&quot;,  &quot;CRM.Contact.Api.dll&quot;]
+ ---&gt; Running in e0b1f832d22d
+Removing intermediate container e0b1f832d22d
+ ---&gt; 1ae9e139107b
+Successfully built 1ae9e139107b
+Successfully tagged crmnow/contact-api:latest
+</code></pre></div><p>Create &quot;Contact&quot; container from the above image.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>docker run -p <span class="token number">5200</span>:80 crmnow/contact-api:latest
+<span class="token punctuation">[</span>08:49:01 INF <span class="token punctuation">{</span><span class="token string">&quot;SourceContext&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;Microsoft.Hosting.Lifetime&quot;</span>, <span class="token string">&quot;Environment&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;docker&quot;</span>, <span class="token string">&quot;ApplicationName&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;Contact-Service&quot;</span><span class="token punctuation">}</span><span class="token punctuation">]</span> Now listening on: http://<span class="token punctuation">[</span>::<span class="token punctuation">]</span>:80
+<span class="token punctuation">[</span>08:49:01 INF <span class="token punctuation">{</span><span class="token string">&quot;SourceContext&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;Microsoft.Hosting.Lifetime&quot;</span>, <span class="token string">&quot;Environment&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;docker&quot;</span>, <span class="token string">&quot;ApplicationName&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;Contact-Service&quot;</span><span class="token punctuation">}</span><span class="token punctuation">]</span> Application started. Press Ctrl+C to shut down.
+<span class="token punctuation">[</span>08:49:01 INF <span class="token punctuation">{</span><span class="token string">&quot;SourceContext&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;Microsoft.Hosting.Lifetime&quot;</span>, <span class="token string">&quot;Environment&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;docker&quot;</span>, <span class="token string">&quot;ApplicationName&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;Contact-Service&quot;</span><span class="token punctuation">}</span><span class="token punctuation">]</span> Hosting environment: docker
+<span class="token punctuation">[</span>08:49:01 INF <span class="token punctuation">{</span><span class="token string">&quot;SourceContext&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;Microsoft.Hosting.Lifetime&quot;</span>, <span class="token string">&quot;Environment&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;docker&quot;</span>, <span class="token string">&quot;ApplicationName&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;Contact-Service&quot;</span><span class="token punctuation">}</span><span class="token punctuation">]</span> Content root path: /app
+</code></pre></div><p>In the browser http://workshop-vm-[x].eastasia.cloudapp.azure.com:5200/swagger/index.html
+<img src="/acw-containerization/contact-swagger.png" alt=""></p> <p>Congratulations! You have successfully created your first docker image.</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
         ←
         <a href="/acw-containerization/module2/" class="prev">
           Hello world
         </a></span> <span class="next"><a href="/acw-containerization/module4/">
-          Deploy the solution to AKS
+          Multi container environment
         </a>
         →
       </span></p></div> </main></div><div class="global-ui"></div></div>
-    <script src="/acw-containerization/assets/js/app.de4b0b6d.js" defer></script><script src="/acw-containerization/assets/js/2.dec8aa0e.js" defer></script><script src="/acw-containerization/assets/js/8.77e75980.js" defer></script>
+    <script src="/acw-containerization/assets/js/app.4272d21c.js" defer></script><script src="/acw-containerization/assets/js/2.dec8aa0e.js" defer></script><script src="/acw-containerization/assets/js/8.2e66acbd.js" defer></script>
   </body>
 </html>
