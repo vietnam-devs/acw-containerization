@@ -7,7 +7,7 @@ title: Hello world
 In this section, we are going to run a Ubuntu container and play with the `docker run` command.
 
 ```bash
-docker pull ubuntu:18.04
+$ docker pull ubuntu:18.04
 ```
 
 The `pull` command fetches the ubuntu image from Docker Hub and store into the system.

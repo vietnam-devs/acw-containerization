@@ -6,13 +6,13 @@ title: Multi containers environment
 
 ### Contact service
 
-Contact service is writtern by .Net Core 3.0 preview and use Postgres to store data. Source code is ready at https://github.com/tungphuong/crm.git.
+Contact service is writtern by `.Net Core 3.0 preview` and use `Postgres` to store data. Source code is ready at [https://github.com/tungphuong/crm.git](https://github.com/tungphuong/crm.git).
 
 To dockerize this service, we need 3 containers:
 
-- Postgres
-- Contact service
-- Database migration
+- **Postgres**
+- **Contact service**
+- **Database migration**
 
 Let's pull the image
 
@@ -22,13 +22,13 @@ $ sudo docker pull postgres:11-alpine
 
 And run it
 
-```
+```bash
 $ sudo docker run --rm -p 5432:5432 -d -e POSTGRES_USER=lab -e POSTGRES_PASSWORD=P@ssw0rd --name postgres.data postgres:11-alpine
 ```
 
 Run "Contact" service
 
-```
+```bash
 $ sudo docker run --rm -p 5000:80 -e ConnectionStrings__default="Server=postgres.data;Port=5432;Database=crm-contact;User Id=lab;Password=P@ssw0rd;" crmnow/contact-api:latest
 
 System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (00000005, 0xFFFDFFFF): Name or service not known
@@ -62,7 +62,7 @@ $ sudo docker run --rm -p 5432:5432 -d -e POSTGRES_USER=lab -e POSTGRES_PASSWORD
 
 And try to connect our service to database server in the `workshop-network` network
 
-```
+```bash
 $ sudo docker run --rm -p 5000:80 --net workshop-network -e ConnectionStrings__default="Server=postgres.data;Port=5432;Database=crm-contact;User Id=lab;Password=P@ssw0rd;" crmnow/contact-api:latest
 
 Npgsql.PostgresException (0x80004005): 3D000: database "crm-contact" does not exist
@@ -85,7 +85,7 @@ $ sudo chmod +x /usr/local/bin/docker-compose
 
 Test the installation
 
-```
+```bash
 $ docker-compose --version
 $ docker-compose version 1.24.1, build 4667896b
 ```

@@ -42,13 +42,13 @@ Currently, Docker is not exposing any port to host. We re-run `docker run` with 
 $ sudo docker run --name static-site -v /home/workshop/simple-site:/usr/share/nginx/html:ro -p 32769:80 -d nginx
 ```
 
-In the above command, `-p` flag is used to publish port from container to host, syntax [host port]:[container port]
+In the above command, **`-p`** flag is used to publish port from container to host, syntax **`[host port]`:`[container port]`**
 
-In the browser http://workshop-vm-[x].eastasia.cloudapp.azure.com:32769/
+In the browser `http://workshop-vm-[x].eastasia.cloudapp.azure.com:32769/`
 
 ### Our first image
 
-It is time to build and own Docker images. In this section, we will create one Docker image for "Contact service", based on .Net Core 3.0 previce 8. Besides, it also guides you how to deploy Postgres by container and connect them together.
+It is time to build and own Docker images. In this section, we will create one Docker image for **Contact service**, based on `.Net Core 3.0 previce 8`. Besides, it also guides you how to deploy Postgres by container and connect them together.
 
 Fristly, please clone the repository locally.
 
@@ -61,13 +61,13 @@ $ cd crm/
 
 In "Contact" service directory has a Dockerfile. It starts by `FROM` keyword
 
-```bash
+```dockerfile
 FROM mcr.microsoft.com/dotnet/core/sdk:3.0.100-preview8-bionic AS builder
 ```
 
 Configuring the working directory in container
 
-```Dockerfile
+```dockerfile
 WORKDIR /src
 ```
 
@@ -75,7 +75,7 @@ The next steps is to write commands of:
 
 - Coping file, folder installing the dependencies...
 
-```
+```dockerfile
 COPY ["src/BuildingBlocks/CRM.Shared/*.csproj", "src/BuildingBlocks/CRM.Shared/"]
 COPY ["src/BuildingBlocks/CRM.Migration/*.csproj", "src/BuildingBlocks/CRM.Migration/"]
 ...
@@ -83,33 +83,33 @@ COPY ["src/BuildingBlocks/CRM.Migration/*.csproj", "src/BuildingBlocks/CRM.Migra
 
 - Restoring packages
 
-```
+```dockerfile
 RUN dotnet restore src/Contact/CRM.Contact.Api/ /property:Configuration=Release ${feed} -nowarn:msb3202,nu1503
 ```
 
 - Building project
 
-```
+```dockerfile
 RUN dotnet publish src/Contact/CRM.Contact.Api/ -c Release -o /app --no-restore
 ```
 
 The next thing is to set environment variables
 
-```
+```dockerfile
 ENV ASPNETCORE_URLS http://*:80
 ENV ASPNETCORE_ENVIRONMENT docker
 ```
 
 Last one is to specify the port number and the command for running the service
 
-```
+```dockerfile
 EXPOSE 80
 ENTRYPOINT [ "dotnet",  "CRM.Contact.Api.dll"]
 ```
 
 Our Dockerfile is ready and looks like
 
-```
+```dockerfile
 FROM mcr.microsoft.com/dotnet/core/sdk:3.0.100-preview8-bionic AS builder
 
 ARG feed='--source "https://api.nuget.org/v3/index.json"'
@@ -146,7 +146,7 @@ ENTRYPOINT [ "dotnet",  "CRM.Contact.Api.dll"]
 
 ### Build image from Dockerfile
 
-```
+```bash
 $ sudo docker build -t crmnow/contact-api -f src/Contact/CRM.Contact.Api/Dockerfile .
 
 Sending build context to Docker daemon  2.223MB

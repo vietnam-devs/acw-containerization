@@ -107,6 +107,8 @@ Server:
  ...
 ```
 
+**Notes**: If you don't want to type `sudo` before each command, type `sudo bash` or `sudo su`.
+
 ### Test Docker installation
 
 1. Test installation works by running the following
