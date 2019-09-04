@@ -7,7 +7,7 @@
     <meta name="description" content="Docker &amp; AKS workshop">
     <link rel="icon" href="/acw-containerization/favicon.png">
     
-    <link rel="preload" href="/acw-containerization/assets/css/0.styles.ae323523.css" as="style"><link rel="preload" href="/acw-containerization/assets/js/app.9f94a02c.js" as="script"><link rel="preload" href="/acw-containerization/assets/js/2.dec8aa0e.js" as="script"><link rel="preload" href="/acw-containerization/assets/js/8.c2aa1fab.js" as="script"><link rel="prefetch" href="/acw-containerization/assets/js/10.6a609194.js"><link rel="prefetch" href="/acw-containerization/assets/js/11.066ff142.js"><link rel="prefetch" href="/acw-containerization/assets/js/12.dc0478b7.js"><link rel="prefetch" href="/acw-containerization/assets/js/3.8d8e2f29.js"><link rel="prefetch" href="/acw-containerization/assets/js/4.7d932259.js"><link rel="prefetch" href="/acw-containerization/assets/js/5.6f0e6c56.js"><link rel="prefetch" href="/acw-containerization/assets/js/6.6d72fd7c.js"><link rel="prefetch" href="/acw-containerization/assets/js/7.0f20c62b.js"><link rel="prefetch" href="/acw-containerization/assets/js/9.dddba1b0.js">
+    <link rel="preload" href="/acw-containerization/assets/css/0.styles.ae323523.css" as="style"><link rel="preload" href="/acw-containerization/assets/js/app.545ce328.js" as="script"><link rel="preload" href="/acw-containerization/assets/js/2.dec8aa0e.js" as="script"><link rel="preload" href="/acw-containerization/assets/js/8.1db2ec94.js" as="script"><link rel="prefetch" href="/acw-containerization/assets/js/10.ac71cf06.js"><link rel="prefetch" href="/acw-containerization/assets/js/11.066ff142.js"><link rel="prefetch" href="/acw-containerization/assets/js/12.dc0478b7.js"><link rel="prefetch" href="/acw-containerization/assets/js/3.8d8e2f29.js"><link rel="prefetch" href="/acw-containerization/assets/js/4.7d932259.js"><link rel="prefetch" href="/acw-containerization/assets/js/5.6f0e6c56.js"><link rel="prefetch" href="/acw-containerization/assets/js/6.4ca07aa7.js"><link rel="prefetch" href="/acw-containerization/assets/js/7.942ca744.js"><link rel="prefetch" href="/acw-containerization/assets/js/9.266f1dc9.js">
     <link rel="stylesheet" href="/acw-containerization/assets/css/0.styles.ae323523.css">
   </head>
   <body>
@@ -31,20 +31,20 @@ EOF</span>
 <span class="token punctuation">..</span><span class="token punctuation">..</span>
 $ <span class="token function">curl</span> http://localhost
 </code></pre></div><p>Currently, Docker is not exposing any port to host. We re-run <code>docker run</code> with <code>-p</code> to publish port.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">sudo</span> docker run --name static-site -v /home/workshop/simple-site:/usr/share/nginx/html:ro -p <span class="token number">32769</span>:80 -d nginx
-</code></pre></div><p>In the above command, <code>-p</code> flag is used to publish port from container to host, syntax [host port]:[container port]</p> <p>In the browser http://workshop-vm-[x].eastasia.cloudapp.azure.com:32769/</p> <h3 id="our-first-image"><a href="#our-first-image" aria-hidden="true" class="header-anchor">#</a> Our first image</h3> <p>It is time to build and own Docker images. In this section, we will create one Docker image for &quot;Contact service&quot;, based on .Net Core 3.0 previce 8. Besides, it also guides you how to deploy Postgres by container and connect them together.</p> <p>Fristly, please clone the repository locally.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">git</span> clone https://github.com/tungphuong/crm.git
+</code></pre></div><p>In the above command, <strong><code>-p</code></strong> flag is used to publish port from container to host, syntax <strong><code>[host port]</code>:<code>[container port]</code></strong></p> <p>In the browser <code>http://workshop-vm-[x].eastasia.cloudapp.azure.com:32769/</code></p> <h3 id="our-first-image"><a href="#our-first-image" aria-hidden="true" class="header-anchor">#</a> Our first image</h3> <p>It is time to build and own Docker images. In this section, we will create one Docker image for <strong>Contact service</strong>, based on <code>.Net Core 3.0 previce 8</code>. Besides, it also guides you how to deploy Postgres by container and connect them together.</p> <p>Fristly, please clone the repository locally.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">git</span> clone https://github.com/tungphuong/crm.git
 $ <span class="token builtin class-name">cd</span> crm/
-</code></pre></div><h3 id="dockerfile"><a href="#dockerfile" aria-hidden="true" class="header-anchor">#</a> Dockerfile</h3> <p>In &quot;Contact&quot; service directory has a Dockerfile. It starts by <code>FROM</code> keyword</p> <div class="language-bash extra-class"><pre class="language-bash"><code>FROM mcr.microsoft.com/dotnet/core/sdk:3.0.100-preview8-bionic AS builder
-</code></pre></div><p>Configuring the working directory in container</p> <div class="language-Dockerfile extra-class"><pre class="language-text"><code>WORKDIR /src
-</code></pre></div><p>The next steps is to write commands of:</p> <ul><li>Coping file, folder installing the dependencies...</li></ul> <div class="language- extra-class"><pre class="language-text"><code>COPY [&quot;src/BuildingBlocks/CRM.Shared/*.csproj&quot;, &quot;src/BuildingBlocks/CRM.Shared/&quot;]
+</code></pre></div><h3 id="dockerfile"><a href="#dockerfile" aria-hidden="true" class="header-anchor">#</a> Dockerfile</h3> <p>In &quot;Contact&quot; service directory has a Dockerfile. It starts by <code>FROM</code> keyword</p> <div class="language-dockerfile extra-class"><pre class="language-text"><code>FROM mcr.microsoft.com/dotnet/core/sdk:3.0.100-preview8-bionic AS builder
+</code></pre></div><p>Configuring the working directory in container</p> <div class="language-dockerfile extra-class"><pre class="language-text"><code>WORKDIR /src
+</code></pre></div><p>The next steps is to write commands of:</p> <ul><li>Coping file, folder installing the dependencies...</li></ul> <div class="language-dockerfile extra-class"><pre class="language-text"><code>COPY [&quot;src/BuildingBlocks/CRM.Shared/*.csproj&quot;, &quot;src/BuildingBlocks/CRM.Shared/&quot;]
 COPY [&quot;src/BuildingBlocks/CRM.Migration/*.csproj&quot;, &quot;src/BuildingBlocks/CRM.Migration/&quot;]
 ...
-</code></pre></div><ul><li>Restoring packages</li></ul> <div class="language- extra-class"><pre class="language-text"><code>RUN dotnet restore src/Contact/CRM.Contact.Api/ /property:Configuration=Release ${feed} -nowarn:msb3202,nu1503
-</code></pre></div><ul><li>Building project</li></ul> <div class="language- extra-class"><pre class="language-text"><code>RUN dotnet publish src/Contact/CRM.Contact.Api/ -c Release -o /app --no-restore
-</code></pre></div><p>The next thing is to set environment variables</p> <div class="language- extra-class"><pre class="language-text"><code>ENV ASPNETCORE_URLS http://*:80
+</code></pre></div><ul><li>Restoring packages</li></ul> <div class="language-dockerfile extra-class"><pre class="language-text"><code>RUN dotnet restore src/Contact/CRM.Contact.Api/ /property:Configuration=Release ${feed} -nowarn:msb3202,nu1503
+</code></pre></div><ul><li>Building project</li></ul> <div class="language-dockerfile extra-class"><pre class="language-text"><code>RUN dotnet publish src/Contact/CRM.Contact.Api/ -c Release -o /app --no-restore
+</code></pre></div><p>The next thing is to set environment variables</p> <div class="language-dockerfile extra-class"><pre class="language-text"><code>ENV ASPNETCORE_URLS http://*:80
 ENV ASPNETCORE_ENVIRONMENT docker
-</code></pre></div><p>Last one is to specify the port number and the command for running the service</p> <div class="language- extra-class"><pre class="language-text"><code>EXPOSE 80
+</code></pre></div><p>Last one is to specify the port number and the command for running the service</p> <div class="language-dockerfile extra-class"><pre class="language-text"><code>EXPOSE 80
 ENTRYPOINT [ &quot;dotnet&quot;,  &quot;CRM.Contact.Api.dll&quot;]
-</code></pre></div><p>Our Dockerfile is ready and looks like</p> <div class="language- extra-class"><pre class="language-text"><code>FROM mcr.microsoft.com/dotnet/core/sdk:3.0.100-preview8-bionic AS builder
+</code></pre></div><p>Our Dockerfile is ready and looks like</p> <div class="language-dockerfile extra-class"><pre class="language-text"><code>FROM mcr.microsoft.com/dotnet/core/sdk:3.0.100-preview8-bionic AS builder
 
 ARG feed='--source &quot;https://api.nuget.org/v3/index.json&quot;'
 
@@ -76,32 +76,32 @@ COPY --from=builder /app .
 
 EXPOSE 80
 ENTRYPOINT [ &quot;dotnet&quot;,  &quot;CRM.Contact.Api.dll&quot;]
-</code></pre></div><h3 id="build-image-from-dockerfile"><a href="#build-image-from-dockerfile" aria-hidden="true" class="header-anchor">#</a> Build image from Dockerfile</h3> <div class="language- extra-class"><pre class="language-text"><code>$ sudo docker build -t crmnow/contact-api -f src/Contact/CRM.Contact.Api/Dockerfile .
+</code></pre></div><h3 id="build-image-from-dockerfile"><a href="#build-image-from-dockerfile" aria-hidden="true" class="header-anchor">#</a> Build image from Dockerfile</h3> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">sudo</span> docker build -t crmnow/contact-api -f src/Contact/CRM.Contact.Api/Dockerfile <span class="token builtin class-name">.</span>
 
-Sending build context to Docker daemon  2.223MB
-Step 1/23 : FROM mcr.microsoft.com/dotnet/core/sdk:3.0.100-preview8-bionic AS builder
- ---&gt; 152368392bc4
-Step 2/23 : ARG feed='--source &quot;https://api.nuget.org/v3/index.json&quot;'
- ---&gt; Using cache
- ---&gt; 0751506e9318
-Step 3/23 : WORKDIR /src
- ---&gt; Using cache
- ---&gt; 9414cf4a0d7f
-Step 4/23 : COPY [&quot;src/BuildingBlocks/CRM.Shared/*.csproj&quot;, &quot;src/BuildingBlocks/CRM.Shared/&quot;]
- ---&gt; e8c842891507
-Step 5/23 : COPY [&quot;src/BuildingBlocks/CRM.Migration/*.csproj&quot;, &quot;src/BuildingBlocks/CRM.Migration/&quot;]
- ---&gt; abf5ef0a4fc6
-Step 6/23 : COPY [&quot;src/Contact/CRM.Contact.Contract/*.csproj&quot;, &quot;src/Contact/CRM.Contact.Contract/&quot;]
- ---&gt; 2266cf6ea797
-Step 7/23 : COPY [&quot;src/Contact/CRM.Contact.Api/*.csproj&quot;, &quot;src/Contact/CRM.Contact.Api/&quot;]
- ---&gt; 17077cbc16de
-Step 8/23 : RUN dotnet restore src/Contact/CRM.Contact.Api/ /property:Configuration=Release ${feed} -nowarn:msb3202,nu1503
- ---&gt; Running in 9c30eb05086a
- ....
- Step 23/23 : ENTRYPOINT [ &quot;dotnet&quot;,  &quot;CRM.Contact.Api.dll&quot;]
- ---&gt; Running in e0b1f832d22d
+Sending build context to Docker daemon  <span class="token number">2</span>.223MB
+Step <span class="token number">1</span>/23 <span class="token builtin class-name">:</span> FROM mcr.microsoft.com/dotnet/core/sdk:3.0.100-preview8-bionic AS builder
+ ---<span class="token operator">&gt;</span> 152368392bc4
+Step <span class="token number">2</span>/23 <span class="token builtin class-name">:</span> ARG <span class="token assign-left variable">feed</span><span class="token operator">=</span><span class="token string">'--source &quot;https://api.nuget.org/v3/index.json&quot;'</span>
+ ---<span class="token operator">&gt;</span> Using cache
+ ---<span class="token operator">&gt;</span> 0751506e9318
+Step <span class="token number">3</span>/23 <span class="token builtin class-name">:</span> WORKDIR /src
+ ---<span class="token operator">&gt;</span> Using cache
+ ---<span class="token operator">&gt;</span> 9414cf4a0d7f
+Step <span class="token number">4</span>/23 <span class="token builtin class-name">:</span> COPY <span class="token punctuation">[</span><span class="token string">&quot;src/BuildingBlocks/CRM.Shared/*.csproj&quot;</span>, <span class="token string">&quot;src/BuildingBlocks/CRM.Shared/&quot;</span><span class="token punctuation">]</span>
+ ---<span class="token operator">&gt;</span> e8c842891507
+Step <span class="token number">5</span>/23 <span class="token builtin class-name">:</span> COPY <span class="token punctuation">[</span><span class="token string">&quot;src/BuildingBlocks/CRM.Migration/*.csproj&quot;</span>, <span class="token string">&quot;src/BuildingBlocks/CRM.Migration/&quot;</span><span class="token punctuation">]</span>
+ ---<span class="token operator">&gt;</span> abf5ef0a4fc6
+Step <span class="token number">6</span>/23 <span class="token builtin class-name">:</span> COPY <span class="token punctuation">[</span><span class="token string">&quot;src/Contact/CRM.Contact.Contract/*.csproj&quot;</span>, <span class="token string">&quot;src/Contact/CRM.Contact.Contract/&quot;</span><span class="token punctuation">]</span>
+ ---<span class="token operator">&gt;</span> 2266cf6ea797
+Step <span class="token number">7</span>/23 <span class="token builtin class-name">:</span> COPY <span class="token punctuation">[</span><span class="token string">&quot;src/Contact/CRM.Contact.Api/*.csproj&quot;</span>, <span class="token string">&quot;src/Contact/CRM.Contact.Api/&quot;</span><span class="token punctuation">]</span>
+ ---<span class="token operator">&gt;</span> 17077cbc16de
+Step <span class="token number">8</span>/23 <span class="token builtin class-name">:</span> RUN dotnet restore src/Contact/CRM.Contact.Api/ /property:Configuration<span class="token operator">=</span>Release <span class="token variable">${feed}</span> -nowarn:msb3202,nu1503
+ ---<span class="token operator">&gt;</span> Running <span class="token keyword">in</span> 9c30eb05086a
+ <span class="token punctuation">..</span><span class="token punctuation">..</span>
+ Step <span class="token number">23</span>/23 <span class="token builtin class-name">:</span> ENTRYPOINT <span class="token punctuation">[</span> <span class="token string">&quot;dotnet&quot;</span>,  <span class="token string">&quot;CRM.Contact.Api.dll&quot;</span><span class="token punctuation">]</span>
+ ---<span class="token operator">&gt;</span> Running <span class="token keyword">in</span> e0b1f832d22d
 Removing intermediate container e0b1f832d22d
- ---&gt; 1ae9e139107b
+ ---<span class="token operator">&gt;</span> 1ae9e139107b
 Successfully built 1ae9e139107b
 Successfully tagged crmnow/contact-api:latest
 </code></pre></div><p>Create &quot;Contact&quot; container from the above image.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">sudo</span> docker run -p <span class="token number">5200</span>:80 crmnow/contact-api:latest
@@ -119,6 +119,6 @@ Successfully tagged crmnow/contact-api:latest
         </a>
         →
       </span></p></div> </main></div><div class="global-ui"></div></div>
-    <script src="/acw-containerization/assets/js/app.9f94a02c.js" defer></script><script src="/acw-containerization/assets/js/2.dec8aa0e.js" defer></script><script src="/acw-containerization/assets/js/8.c2aa1fab.js" defer></script>
+    <script src="/acw-containerization/assets/js/app.545ce328.js" defer></script><script src="/acw-containerization/assets/js/2.dec8aa0e.js" defer></script><script src="/acw-containerization/assets/js/8.1db2ec94.js" defer></script>
   </body>
 </html>
