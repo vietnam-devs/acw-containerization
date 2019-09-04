@@ -7,7 +7,7 @@
     <meta name="description" content="Docker &amp; AKS workshop">
     <link rel="icon" href="/acw-containerization/favicon.png">
     
-    <link rel="preload" href="/acw-containerization/assets/css/0.styles.ae323523.css" as="style"><link rel="preload" href="/acw-containerization/assets/js/app.6d2ec9ac.js" as="script"><link rel="preload" href="/acw-containerization/assets/js/2.dec8aa0e.js" as="script"><link rel="preload" href="/acw-containerization/assets/js/9.1274f7a8.js" as="script"><link rel="prefetch" href="/acw-containerization/assets/js/10.6a609194.js"><link rel="prefetch" href="/acw-containerization/assets/js/11.75ebe0ce.js"><link rel="prefetch" href="/acw-containerization/assets/js/12.dc0478b7.js"><link rel="prefetch" href="/acw-containerization/assets/js/3.8d8e2f29.js"><link rel="prefetch" href="/acw-containerization/assets/js/4.7d932259.js"><link rel="prefetch" href="/acw-containerization/assets/js/5.6f0e6c56.js"><link rel="prefetch" href="/acw-containerization/assets/js/6.1cc1bb35.js"><link rel="prefetch" href="/acw-containerization/assets/js/7.e3053593.js"><link rel="prefetch" href="/acw-containerization/assets/js/8.ba3bb4a0.js">
+    <link rel="preload" href="/acw-containerization/assets/css/0.styles.ae323523.css" as="style"><link rel="preload" href="/acw-containerization/assets/js/app.9f94a02c.js" as="script"><link rel="preload" href="/acw-containerization/assets/js/2.dec8aa0e.js" as="script"><link rel="preload" href="/acw-containerization/assets/js/9.dddba1b0.js" as="script"><link rel="prefetch" href="/acw-containerization/assets/js/10.6a609194.js"><link rel="prefetch" href="/acw-containerization/assets/js/11.066ff142.js"><link rel="prefetch" href="/acw-containerization/assets/js/12.dc0478b7.js"><link rel="prefetch" href="/acw-containerization/assets/js/3.8d8e2f29.js"><link rel="prefetch" href="/acw-containerization/assets/js/4.7d932259.js"><link rel="prefetch" href="/acw-containerization/assets/js/5.6f0e6c56.js"><link rel="prefetch" href="/acw-containerization/assets/js/6.6d72fd7c.js"><link rel="prefetch" href="/acw-containerization/assets/js/7.0f20c62b.js"><link rel="prefetch" href="/acw-containerization/assets/js/8.c2aa1fab.js">
     <link rel="stylesheet" href="/acw-containerization/assets/css/0.styles.ae323523.css">
   </head>
   <body>
@@ -15,9 +15,9 @@
     GitHub
     <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/acw-containerization/" class="nav-link">Home</a></div> <a href="https://github.com/vietnam-devs/acw-containerization" target="_blank" rel="noopener noreferrer" class="repo-link">
     GitHub
-    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><a href="/acw-containerization/" class="sidebar-link">Azure cloud workshop introduction</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/acw-containerization/#agenda" class="sidebar-link">Agenda</a></li><li class="sidebar-sub-header"><a href="/acw-containerization/#source-code" class="sidebar-link">Source Code</a></li><li class="sidebar-sub-header"><a href="/acw-containerization/#target-audience" class="sidebar-link">Target Audience</a></li></ul></li><li><a href="/acw-containerization/module1/" class="sidebar-link">Set up your Docker environment</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/acw-containerization/module2/" class="sidebar-link">Hello world</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/acw-containerization/module3/" class="sidebar-link">Create and run a Docker application</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/acw-containerization/module4/" class="active sidebar-link">Multi containers environment</a><ul class="sidebar-sub-headers"></ul></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="module-4-multi-containers-environment"><a href="#module-4-multi-containers-environment" aria-hidden="true" class="header-anchor">#</a> Module 4: Multi containers environment</h1> <h3 id="contact-service"><a href="#contact-service" aria-hidden="true" class="header-anchor">#</a> Contact service</h3> <p>Contact service is writtern by .Net Core 3.0 preview and use Postgres to store data. Source code is ready at https://github.com/tungphuong/crm.git.</p> <p>To dockerize this service, we need 3 containers:</p> <ul><li>Postgres</li> <li>Contact service</li> <li>Database migration</li></ul> <p>Let's pull the image</p> <div class="language-bash extra-class"><pre class="language-bash"><code>docker pull postgres:11-alpine
-</code></pre></div><p>And run it</p> <div class="language- extra-class"><pre class="language-text"><code>docker run --rm -p 5432:5432 -d -e POSTGRES_USER=lab -e POSTGRES_PASSWORD=P@ssw0rd --name postgres.data postgres:11-alpine
-</code></pre></div><p>Run &quot;Contact&quot; service</p> <div class="language- extra-class"><pre class="language-text"><code>docker run --rm -p 5000:80 -e ConnectionStrings__default=&quot;Server=postgres.data;Port=5432;Database=crm-contact;User Id=lab;Password=P@ssw0rd;&quot; crmnow/contact-api:latest
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><a href="/acw-containerization/" class="sidebar-link">Azure cloud workshop introduction</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/acw-containerization/#agenda" class="sidebar-link">Agenda</a></li><li class="sidebar-sub-header"><a href="/acw-containerization/#source-code" class="sidebar-link">Source Code</a></li><li class="sidebar-sub-header"><a href="/acw-containerization/#target-audience" class="sidebar-link">Target Audience</a></li></ul></li><li><a href="/acw-containerization/module1/" class="sidebar-link">Set up your Docker environment</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/acw-containerization/module2/" class="sidebar-link">Hello world</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/acw-containerization/module3/" class="sidebar-link">Create and run a Docker application</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/acw-containerization/module4/" class="active sidebar-link">Multi containers environment</a><ul class="sidebar-sub-headers"></ul></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="module-4-multi-containers-environment"><a href="#module-4-multi-containers-environment" aria-hidden="true" class="header-anchor">#</a> Module 4: Multi containers environment</h1> <h3 id="contact-service"><a href="#contact-service" aria-hidden="true" class="header-anchor">#</a> Contact service</h3> <p>Contact service is writtern by .Net Core 3.0 preview and use Postgres to store data. Source code is ready at https://github.com/tungphuong/crm.git.</p> <p>To dockerize this service, we need 3 containers:</p> <ul><li>Postgres</li> <li>Contact service</li> <li>Database migration</li></ul> <p>Let's pull the image</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">sudo</span> docker pull postgres:11-alpine
+</code></pre></div><p>And run it</p> <div class="language- extra-class"><pre class="language-text"><code>$ sudo docker run --rm -p 5432:5432 -d -e POSTGRES_USER=lab -e POSTGRES_PASSWORD=P@ssw0rd --name postgres.data postgres:11-alpine
+</code></pre></div><p>Run &quot;Contact&quot; service</p> <div class="language- extra-class"><pre class="language-text"><code>$ sudo docker run --rm -p 5000:80 -e ConnectionStrings__default=&quot;Server=postgres.data;Port=5432;Database=crm-contact;User Id=lab;Password=P@ssw0rd;&quot; crmnow/contact-api:latest
 
 System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (00000005, 0xFFFDFFFF): Name or service not known
    at System.Net.Dns.InternalGetHostByName(String hostName)
@@ -29,74 +29,74 @@ System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (00000005, 0
    at System.Net.Dns.&lt;&gt;c.&lt;GetHostAddressesAsync&gt;b__25_1(IAsyncResult asyncResult)
    at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
 --- End of stack trace from previous location where exception was thrown ---
-</code></pre></div><p>The service cannot connect to database. So, how to connect them together. The answer relates to &quot;Docker Network&quot;.</p> <h3 id="docker-network"><a href="#docker-network" aria-hidden="true" class="header-anchor">#</a> Docker network</h3> <p>Create our own netwrok</p> <div class="language-bash extra-class"><pre class="language-bash"><code>docker network create workshop-network
+</code></pre></div><p>The service cannot connect to database. So, how to connect them together. The answer relates to &quot;Docker Network&quot;.</p> <h3 id="docker-network"><a href="#docker-network" aria-hidden="true" class="header-anchor">#</a> Docker network</h3> <p>Create our own netwrok</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">sudo</span> docker network create workshop-network
 1de671cb3e7b3c05679c4f4a59bb75c5856f491008d44f24b57638523c40f9f6
-</code></pre></div><p>Next, we will run Postgres in the new network</p> <div class="language-bash extra-class"><pre class="language-bash"><code>docker run --rm -p <span class="token number">5432</span>:5432 -d -e <span class="token assign-left variable">POSTGRES_USER</span><span class="token operator">=</span>lab -e <span class="token assign-left variable">POSTGRES_PASSWORD</span><span class="token operator">=</span>P@ssw0rd --name postgres.data --net workshop-network  postgres:11-alpine
-</code></pre></div><p>And try to connect our service to database server in the <code>workshop-network</code> network</p> <div class="language- extra-class"><pre class="language-text"><code>docker run --rm -p 5000:80 --net workshop-network -e ConnectionStrings__default=&quot;Server=postgres.data;Port=5432;Database=crm-contact;User Id=lab;Password=P@ssw0rd;&quot; crmnow/contact-api:latest
+</code></pre></div><p>Next, we will run Postgres in the new network</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">sudo</span> docker run --rm -p <span class="token number">5432</span>:5432 -d -e <span class="token assign-left variable">POSTGRES_USER</span><span class="token operator">=</span>lab -e <span class="token assign-left variable">POSTGRES_PASSWORD</span><span class="token operator">=</span>P@ssw0rd --name postgres.data --net workshop-network  postgres:11-alpine
+</code></pre></div><p>And try to connect our service to database server in the <code>workshop-network</code> network</p> <div class="language- extra-class"><pre class="language-text"><code>$ sudo docker run --rm -p 5000:80 --net workshop-network -e ConnectionStrings__default=&quot;Server=postgres.data;Port=5432;Database=crm-contact;User Id=lab;Password=P@ssw0rd;&quot; crmnow/contact-api:latest
 
 Npgsql.PostgresException (0x80004005): 3D000: database &quot;crm-contact&quot; does not exist
    at Npgsql.NpgsqlConnector.&lt;&gt;c__DisplayClass161_0.&lt;&lt;ReadMessage&gt;g__ReadMessageLong|0&gt;d.MoveNext()
-</code></pre></div><p>Greate, connected successfully but we still need to setup database via migration.</p> <h3 id="docker-compose"><a href="#docker-compose" aria-hidden="true" class="header-anchor">#</a> Docker compose</h3> <p>Docker compose is a tool for defining and running multi-container Docker application</p> <p>Install <code>compose-compose</code> CLI</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">sudo</span> <span class="token function">curl</span> -L <span class="token string">&quot;https://github.com/docker/compose/releases/download/1.24.1/docker-compose-<span class="token variable"><span class="token variable">$(</span><span class="token function">uname</span> -s<span class="token variable">)</span></span>-<span class="token variable"><span class="token variable">$(</span><span class="token function">uname</span> -m<span class="token variable">)</span></span>&quot;</span> -o /usr/local/bin/docker-compose
+</code></pre></div><p>Greate, connected successfully but we still need to setup database via migration.</p> <h3 id="docker-compose"><a href="#docker-compose" aria-hidden="true" class="header-anchor">#</a> Docker compose</h3> <p>Docker compose is a tool for defining and running multi-container Docker application</p> <p>Install <code>compose-compose</code> CLI</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">sudo</span> <span class="token function">curl</span> -L <span class="token string">&quot;https://github.com/docker/compose/releases/download/1.24.1/docker-compose-<span class="token variable"><span class="token variable">$(</span><span class="token function">uname</span> -s<span class="token variable">)</span></span>-<span class="token variable"><span class="token variable">$(</span><span class="token function">uname</span> -m<span class="token variable">)</span></span>&quot;</span> -o /usr/local/bin/docker-compose
 
-<span class="token function">sudo</span> <span class="token function">chmod</span> +x /usr/local/bin/docker-compose
-</code></pre></div><p>Test the installation</p> <div class="language- extra-class"><pre class="language-text"><code>docker-compose --version
-docker-compose version 1.24.1, build 4667896b
-</code></pre></div><p>Next steps, expoler one simple Docker compose file with YAML format.</p> <div class="language- extra-class"><pre class="language-text"><code>version: '3.7'
+$ <span class="token function">sudo</span> <span class="token function">chmod</span> +x /usr/local/bin/docker-compose
+</code></pre></div><p>Test the installation</p> <div class="language- extra-class"><pre class="language-text"><code>$ docker-compose --version
+$ docker-compose version 1.24.1, build 4667896b
+</code></pre></div><p>Next steps, expoler one simple Docker compose file with YAML format.</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'3.7'</span>
 
-services:
-  postgres.data:
-    image: postgres:11-alpine
-    volumes:
-      - postgres-data:/var/lib/postgresql/data
-    networks:
-      - crm
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+  <span class="token key atrule">postgres.data</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> postgres<span class="token punctuation">:</span>11<span class="token punctuation">-</span>alpine
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> postgres<span class="token punctuation">-</span>data<span class="token punctuation">:</span>/var/lib/postgresql/data
+    <span class="token key atrule">networks</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> crm
 
-  contact-api:
-    image: ${REGISTRY:-crmnow}/contact-api:${TAG:-latest}
-    build: 
-      context: .
-      dockerfile: src/Contact/CRM.Contact.Api/Dockerfile
-      args:
-        - feed=${NUGET_FEED:- --source &quot;https://api.nuget.org/v3/index.json&quot;}
-    networks: 
-      - crm
-    depends_on: 
-      - postgres.data
+  <span class="token key atrule">contact-api</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span>REGISTRY<span class="token punctuation">:</span><span class="token punctuation">-</span>crmnow<span class="token punctuation">}</span>/contact<span class="token punctuation">-</span>api<span class="token punctuation">:</span>$<span class="token punctuation">{</span>TAG<span class="token punctuation">:</span><span class="token punctuation">-</span>latest<span class="token punctuation">}</span>
+    <span class="token key atrule">build</span><span class="token punctuation">:</span>
+      <span class="token key atrule">context</span><span class="token punctuation">:</span> .
+      <span class="token key atrule">dockerfile</span><span class="token punctuation">:</span> src/Contact/CRM.Contact.Api/Dockerfile
+      <span class="token key atrule">args</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> feed=$<span class="token punctuation">{</span>NUGET_FEED<span class="token punctuation">:</span><span class="token punctuation">-</span> <span class="token punctuation">-</span><span class="token punctuation">-</span>source &quot;https<span class="token punctuation">:</span>//api.nuget.org/v3/index.json&quot;<span class="token punctuation">}</span>
+    <span class="token key atrule">networks</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> crm
+    <span class="token key atrule">depends_on</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> postgres.data
 
-  contact-api-migration:
-    image: ${REGISTRY:-crmnow}/contact-api:${TAG:-latest}
-    build: 
-      context: .
-      dockerfile: src/Contact/CRM.Contact.Api/Dockerfile
-      target: migration
-      args:
-        - feed=${NUGET_FEED:- --source &quot;https://api.nuget.org/v3/index.json&quot;}
-    environment: 
-      - ConnectionStrings__contact=Server=postgres.data;Port=5432;Database=crm-contact;User Id=lab;Password=P@ssw0rd;
-    entrypoint:      
-      - dotnet
-      - run
-      - contact
-    networks: 
-      - crm
-    depends_on: 
-      - postgres.data
+  <span class="token key atrule">contact-api-migration</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span>REGISTRY<span class="token punctuation">:</span><span class="token punctuation">-</span>crmnow<span class="token punctuation">}</span>/contact<span class="token punctuation">-</span>api<span class="token punctuation">:</span>$<span class="token punctuation">{</span>TAG<span class="token punctuation">:</span><span class="token punctuation">-</span>latest<span class="token punctuation">}</span>
+    <span class="token key atrule">build</span><span class="token punctuation">:</span>
+      <span class="token key atrule">context</span><span class="token punctuation">:</span> .
+      <span class="token key atrule">dockerfile</span><span class="token punctuation">:</span> src/Contact/CRM.Contact.Api/Dockerfile
+      <span class="token key atrule">target</span><span class="token punctuation">:</span> migration
+      <span class="token key atrule">args</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> feed=$<span class="token punctuation">{</span>NUGET_FEED<span class="token punctuation">:</span><span class="token punctuation">-</span> <span class="token punctuation">-</span><span class="token punctuation">-</span>source &quot;https<span class="token punctuation">:</span>//api.nuget.org/v3/index.json&quot;<span class="token punctuation">}</span>
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> ConnectionStrings__contact=Server=postgres.data;Port=5432;Database=crm<span class="token punctuation">-</span>contact;User Id=lab;Password=P@ssw0rd;
+    <span class="token key atrule">entrypoint</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> dotnet
+      <span class="token punctuation">-</span> run
+      <span class="token punctuation">-</span> contact
+    <span class="token key atrule">networks</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> crm
+    <span class="token key atrule">depends_on</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> postgres.data
 
-volumes:
-  postgres-data:
-  nexus-data:
-  seq-data:
+<span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+  <span class="token key atrule">postgres-data</span><span class="token punctuation">:</span>
+  <span class="token key atrule">nexus-data</span><span class="token punctuation">:</span>
+  <span class="token key atrule">seq-data</span><span class="token punctuation">:</span>
 
-networks:
-  crm:
-    name: crm-network
+<span class="token key atrule">networks</span><span class="token punctuation">:</span>
+  <span class="token key atrule">crm</span><span class="token punctuation">:</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> crm<span class="token punctuation">-</span>network
 </code></pre></div><p>Now the file is ready, let's see <code>docker-compose</code> in action
-Firstly, clean up environment</p> <div class="language-bash extra-class"><pre class="language-bash"><code>docker <span class="token function">rm</span> -f postgres.data contact-api
+Firstly, clean up environment</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">sudo</span> docker <span class="token function">rm</span> -f postgres.data contact-api
 
-docker network <span class="token function">rm</span> workshop-network
-</code></pre></div><p>Secondly, run database migration</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token builtin class-name">cd</span> crm
+$ <span class="token function">sudo</span> docker network <span class="token function">rm</span> workshop-network
+</code></pre></div><p>Secondly, run database migration</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token builtin class-name">cd</span> crm
 
-docker-compose -f docker-compose.yml -f docker-compose.override.yml up postgres.data contact-api-migration
+$ docker-compose -f docker-compose.yml -f docker-compose.override.yml up postgres.data contact-api-migration
 
 contact-api-migration_1  <span class="token operator">|</span> <span class="token punctuation">[</span><span class="token number">10</span>:19:09 INF<span class="token punctuation">]</span> Run migration - Contact Db
 contact-api-migration_1  <span class="token operator">|</span> Master ConnectionString <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token assign-left variable">Host</span><span class="token operator">=</span>postgres.data<span class="token punctuation">;</span><span class="token assign-left variable">Port</span><span class="token operator">=</span><span class="token number">5432</span><span class="token punctuation">;</span><span class="token assign-left variable">Database</span><span class="token operator">=</span>postgres<span class="token punctuation">;</span><span class="token assign-left variable">Username</span><span class="token operator">=</span>lab<span class="token punctuation">;</span><span class="token assign-left variable">Password</span><span class="token operator">=</span>********
@@ -111,9 +111,9 @@ contact-api-migration_1  <span class="token operator">|</span> <span class="toke
 contact-api-migration_1  <span class="token operator">|</span> <span class="token punctuation">[</span><span class="token number">10</span>:19:11 INF<span class="token punctuation">]</span> Upgrade successful
 crm_contact-api-migration_1 exited with code <span class="token number">0</span>
 
-</code></pre></div><p>It is the time to up everything.</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token builtin class-name">cd</span> crm
+</code></pre></div><p>It is the time to up everything.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token builtin class-name">cd</span> crm
 
-docker-compose -f docker-compose.yml -f docker-compose.override.yml up postgres.data contact-api
+$ docker-compose -f docker-compose.yml -f docker-compose.override.yml up postgres.data contact-api
 
 Creating network <span class="token string">&quot;crm-network&quot;</span> with the default driver
 Creating volume <span class="token string">&quot;crm_postgres-data&quot;</span> with default driver
@@ -121,7 +121,7 @@ Creating volume <span class="token string">&quot;crm_nexus-data&quot;</span> wit
 Creating volume <span class="token string">&quot;crm_seq-data&quot;</span> with default driver
 Creating crm_postgres.data_1 <span class="token punctuation">..</span>. <span class="token keyword">done</span>
 Creating crm_contact-api-migration_1 <span class="token punctuation">..</span>. <span class="token keyword">done</span>
-Creating crm_contact-api_1           <span class="token punctuation">..</span>. 
+Creating crm_contact-api_1           <span class="token punctuation">..</span>.
 <span class="token punctuation">..</span>.
 
 <span class="token punctuation">[</span>
@@ -145,6 +145,6 @@ Creating crm_contact-api_1           <span class="token punctuation">..</span>.
         <a href="/acw-containerization/module3/" class="prev">
           Create and run a Docker application
         </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
-    <script src="/acw-containerization/assets/js/app.6d2ec9ac.js" defer></script><script src="/acw-containerization/assets/js/2.dec8aa0e.js" defer></script><script src="/acw-containerization/assets/js/9.1274f7a8.js" defer></script>
+    <script src="/acw-containerization/assets/js/app.9f94a02c.js" defer></script><script src="/acw-containerization/assets/js/2.dec8aa0e.js" defer></script><script src="/acw-containerization/assets/js/9.dddba1b0.js" defer></script>
   </body>
 </html>
