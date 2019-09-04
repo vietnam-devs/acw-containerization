@@ -1,8 +1,8 @@
 ---
-title: Deploy the solution to AKS
+title: Multi container environment
 ---
 
-# Module 4: Deploy the solution to Azure Kubernetes Service
+# Module 4: Multi container environment
 - Tunnel into the Azure Kubernetes Service cluster
 - Deploy a service using the Kubernetes management dashboard
 - Deploy a service using kubectl
