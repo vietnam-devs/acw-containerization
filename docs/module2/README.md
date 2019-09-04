@@ -1,8 +1,8 @@
 ---
-title: Hello world
+title: Play with Ubuntu image
 ---
 
-# Module 2: Play with Ubuntu
+# Module 2: Play with Ubuntu image
 
 In this section, we are going to run a Ubuntu container and play with the `docker run` command.
 

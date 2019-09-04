@@ -2,7 +2,7 @@
 title: Set up your Docker environment
 ---
 
-# Module 1: Set up
+# Module 1: Set up your Docker environment
 
 ### Concepts
 
