@@ -7,7 +7,7 @@
     <meta name="description" content="Docker &amp; AKS workshop">
     <link rel="icon" href="/acw-containerization/favicon.png">
     
-    <link rel="preload" href="/acw-containerization/assets/css/0.styles.ae323523.css" as="style"><link rel="preload" href="/acw-containerization/assets/js/app.83bda0ee.js" as="script"><link rel="preload" href="/acw-containerization/assets/js/2.dec8aa0e.js" as="script"><link rel="preload" href="/acw-containerization/assets/js/8.22e605b3.js" as="script"><link rel="prefetch" href="/acw-containerization/assets/js/10.6a609194.js"><link rel="prefetch" href="/acw-containerization/assets/js/11.75ebe0ce.js"><link rel="prefetch" href="/acw-containerization/assets/js/12.dc0478b7.js"><link rel="prefetch" href="/acw-containerization/assets/js/3.8d8e2f29.js"><link rel="prefetch" href="/acw-containerization/assets/js/4.7d932259.js"><link rel="prefetch" href="/acw-containerization/assets/js/5.6fac6dcf.js"><link rel="prefetch" href="/acw-containerization/assets/js/6.0db153de.js"><link rel="prefetch" href="/acw-containerization/assets/js/7.75e15289.js"><link rel="prefetch" href="/acw-containerization/assets/js/9.942ab6fd.js">
+    <link rel="preload" href="/acw-containerization/assets/css/0.styles.ae323523.css" as="style"><link rel="preload" href="/acw-containerization/assets/js/app.9aea34d8.js" as="script"><link rel="preload" href="/acw-containerization/assets/js/2.dec8aa0e.js" as="script"><link rel="preload" href="/acw-containerization/assets/js/8.fb6fec93.js" as="script"><link rel="prefetch" href="/acw-containerization/assets/js/10.ac71cf06.js"><link rel="prefetch" href="/acw-containerization/assets/js/11.066ff142.js"><link rel="prefetch" href="/acw-containerization/assets/js/12.dc0478b7.js"><link rel="prefetch" href="/acw-containerization/assets/js/3.8d8e2f29.js"><link rel="prefetch" href="/acw-containerization/assets/js/4.7d932259.js"><link rel="prefetch" href="/acw-containerization/assets/js/5.6fac6dcf.js"><link rel="prefetch" href="/acw-containerization/assets/js/6.0db153de.js"><link rel="prefetch" href="/acw-containerization/assets/js/7.75e15289.js"><link rel="prefetch" href="/acw-containerization/assets/js/9.ae890790.js">
     <link rel="stylesheet" href="/acw-containerization/assets/css/0.styles.ae323523.css">
   </head>
   <body>
@@ -110,7 +110,18 @@ Successfully tagged crmnow/contact-api:latest
 <span class="token punctuation">[</span>08:49:01 INF <span class="token punctuation">{</span><span class="token string">&quot;SourceContext&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;Microsoft.Hosting.Lifetime&quot;</span>, <span class="token string">&quot;Environment&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;docker&quot;</span>, <span class="token string">&quot;ApplicationName&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;Contact-Service&quot;</span><span class="token punctuation">}</span><span class="token punctuation">]</span> Hosting environment: docker
 <span class="token punctuation">[</span>08:49:01 INF <span class="token punctuation">{</span><span class="token string">&quot;SourceContext&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;Microsoft.Hosting.Lifetime&quot;</span>, <span class="token string">&quot;Environment&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;docker&quot;</span>, <span class="token string">&quot;ApplicationName&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;Contact-Service&quot;</span><span class="token punctuation">}</span><span class="token punctuation">]</span> Content root path: /app
 </code></pre></div><p>In the browser http://workshop-vm-[x].eastasia.cloudapp.azure.com:5200/swagger/index.html
-<img src="/acw-containerization/contact-swagger.png" alt=""></p> <p>Congratulations! You have successfully created your first docker image.</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+<img src="/acw-containerization/contact-swagger.png" alt=""></p> <p>Congratulations! You have successfully created your first docker image.</p> <h3 id="docker-push"><a href="#docker-push" aria-hidden="true" class="header-anchor">#</a> Docker push</h3> <p>The first thing that we need to do defore we deploy our app to Azure or any cloud is to publish docker image on a registry. There are many Docker registry such as Docker Hub, ACR,... For now, let's assume that you had one contrainer registry on ACR. To publish, follow below steps</p> <div class="language-bash extra-class"><pre class="language-bash"><code>docker login <span class="token punctuation">[</span>your ACR<span class="token punctuation">]</span>.azurecr.io
+Username: 
+Password: 
+WARNING<span class="token operator">!</span> Your password will be stored unencrypted <span class="token keyword">in</span> /home/workshop/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/<span class="token comment">#credentials-store</span>
+
+Login Succeeded
+</code></pre></div><p>Tag the image</p> <div class="language- extra-class"><pre class="language-text"><code>docker tag crmnow/contact-api  acrworkshophub.azurecr.io/crmnow/contact-api:v1
+</code></pre></div><p>Push it</p> <div class="language- extra-class"><pre class="language-text"><code>docker push acrworkshophub.azurecr.io/crmnow/contact-api:v1
+</code></pre></div><p>Logout</p> <div class="language- extra-class"><pre class="language-text"><code>docker logout acrworkshophub.azurecr.io
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
         ←
         <a href="/acw-containerization/module2/" class="prev">
           Play with Ubuntu image
@@ -119,6 +130,6 @@ Successfully tagged crmnow/contact-api:latest
         </a>
         →
       </span></p></div> </main></div><div class="global-ui"></div></div>
-    <script src="/acw-containerization/assets/js/app.83bda0ee.js" defer></script><script src="/acw-containerization/assets/js/2.dec8aa0e.js" defer></script><script src="/acw-containerization/assets/js/8.22e605b3.js" defer></script>
+    <script src="/acw-containerization/assets/js/app.9aea34d8.js" defer></script><script src="/acw-containerization/assets/js/2.dec8aa0e.js" defer></script><script src="/acw-containerization/assets/js/8.fb6fec93.js" defer></script>
   </body>
 </html>
