@@ -158,3 +158,33 @@ In the browser http://workshop-vm-[x].eastasia.cloudapp.azure.com:5200/swagger/i
 ![](/acw-containerization/contact-swagger.png) 
 
 Congratulations! You have successfully created your first docker image.
+
+### Docker push
+
+The first thing that we need to do defore we deploy our app to Azure or any cloud is to publish docker image on a registry. There are many Docker registry such as Docker Hub, ACR,... For now, let's assume that you had one contrainer registry on ACR. To publish, follow below steps
+
+```bash
+docker login [your ACR].azurecr.io
+Username: 
+Password: 
+WARNING! Your password will be stored unencrypted in /home/workshop/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+
+Login Succeeded
+```
+
+Tag the image
+```
+docker tag crmnow/contact-api  acrworkshophub.azurecr.io/crmnow/contact-api:v1
+```
+
+Push it
+```
+docker push acrworkshophub.azurecr.io/crmnow/contact-api:v1
+```
+
+Logout
+```
+docker logout acrworkshophub.azurecr.io
+```
