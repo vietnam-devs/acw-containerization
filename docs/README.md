@@ -2,9 +2,9 @@
 title: Azure cloud workshop introduction
 ---
 
-# Azure Cloud Workshop 
+# Azure Cloud Workshop
 
-::: tip 
+::: tip
 Focus on Docker and AKS
 :::
 
@@ -14,17 +14,19 @@ At the very first of this lab, we will introduce you a bit about the sample appl
 
 At the end of this training, you will have a better understanding of Docker, Kubernetes, and AKS and should be able to build and deploy containerized applications to Azure Kubernetes Service and perform common DevOps procedures.
 
-## Agenda
-- [Module 1: Create and run a Docker application](module1/README.md)
-- [Module 2: Deploy the solution to Azure Kubernetes Service](module2/README.md)
-- [Module 3: Scale the application and test HA](module3/README.md)
-- [Module 4: Setup load balancing and service discovery](module4/README.md)
+### Agenda
 
-## Source Code
+- [Module 1: Set up your Docker environment](module1/README.md)
+- [Module 2: Play with Ubuntu image](module2/README.md)
+- [Module 3: Create and run a Docker application](module3/README.md)
+- [Module 4: Multi containers environment](module4/README.md)
+
+### Source Code
 
 [CRM Application](https://github.com/tungphuong/crm)
 
-## Target Audience
+### Target Audience
+
 - Application developer
 - Infrastructure architect
 - DevOps Professionals
